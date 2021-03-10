@@ -1,0 +1,15 @@
+data:
+  dataloader: {batch_size: 32, class_balance: true, data_workers: 2}
+  # dataset: {n_share: 31, n_total: 31, name: office, root_path: /data1/hanzhongyi/datasets/office,
+  #   source: 1, target: 2}
+  dataset: {n_share: 65, n_total: 65, name: officehome, root_path: /data1/hanzhongyi/datasets/office/office-homew,
+    source: 3, target: 2}
+  # dataset: {n_share: 12, n_total: 12, name: visda, root_path: /data1/hanzhongyi/datasets/visda,
+  #   source: 0, target: 1}
+log: {log_interval: 10, roSot_dir: public}
+misc: {gpus: 4}
+model: {base_model: resnet50, pretrained_model: False}
+train: {update_freq: 100, lr: 0.001, min_step: 10000, momentum: 0.9, weight_decay: 0.0005}
+train_source: { lr: 0.005, min_step: 10000, momentum: 0.9, weight_decay: 0.001}
+
+
