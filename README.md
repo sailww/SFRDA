@@ -8,7 +8,7 @@
 - CUDNN7.5 (optional)
 
 #Getting Started
-#Installation
+#Installation.
  - Install python libraries
  conda install -c conda-forge matplotlib
  conda install -c anaconda yaml
