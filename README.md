@@ -16,4 +16,7 @@
  conda install -c anaconda scipy\
  conda install -c anaconda scikit-learn\
  conda install -c conda-forge easydict\
- pip insatll easydl\
+ pip insatll easydl
+# Download source-pretrained parameters (Fs and Cs of Figure 2 in our main paper)
+- Download source-pretrained parameters(link)in: save_model_path:replace\
+-EX) source-pretrained parameters of A[0] -> W[2] senario should be located in ***/pretrained_weights_office31/TrainSourceModelaccBEST_model_checkpoint01.pth.tar
