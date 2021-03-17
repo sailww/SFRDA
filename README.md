@@ -7,13 +7,13 @@
 - CUDA 10.0 (optional)
 - CUDNN7.5 (optional)
 
-#Getting Started
-#Installation.
- - Install python libraries
- conda install -c conda-forge matplotlib
- conda install -c anaconda yaml
- conda install -c anaconda pyyaml
- conda install -c anaconda scipy
- conda install -c anaconda scikit-learn
- conda install -c conda-forge easydict
- pip insatll easydl
+# Getting Started
+# Installation.
+ - Install python libraries\
+ conda install -c conda-forge matplotlib\
+ conda install -c anaconda yaml\
+ conda install -c anaconda pyyaml\
+ conda install -c anaconda scipy\
+ conda install -c anaconda scikit-learn\
+ conda install -c conda-forge easydict\
+ pip insatll easydl\
