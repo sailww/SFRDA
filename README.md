@@ -22,6 +22,6 @@
 - ex) source-pretrained parameters of A[0] -> W[2] senario should be located in /pretrained_weights_office31/TrainSourceModelaccBEST_model_checkpoint01.pth.tar
 # Training
 - Run the following command\
- python SFDA_train.py
+  python SFDA_train.py
  
 
