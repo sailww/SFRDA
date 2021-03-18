@@ -21,7 +21,7 @@
 - Download source-pretrained parameters[[link]](https://pan.baidu.com/s/1r7YDhhdpXBanbpNEnIkxvA),password: wfff ;in: save_model_path:replace\
 - ex) source-pretrained parameters of A[0] -> W[2] senario should be located in /pretrained_weights_office31/TrainSourceModelaccBEST_model_checkpoint01.pth.tar
 # Training
-- Run the following command
+- Run the following command\
  python SFDA_train.py
  
 
