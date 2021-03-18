@@ -293,7 +293,7 @@ while epoch_id < 300:
         ce_from_t = torch.mean(ce_from_t.float() * confidence_mask, dim=0, keepdim=True)
 
         # dynamic optimization
-        alpha = np.float(2.0 / (1.0 + np.exp(-global_step/ float(3000))) - 1.0)
+        alpha = np.float(2.0 / (1.0 + np.exp(-global_step/ float((args.train.min_step)/3))) - 1.0)
         ce_total = alpha * entropy_loss + (1-alpha) * ce_from_t
 
         with OptimizerManager([optimizer_finetune, optimizer_classifier_s2t, optimizer_classifier_t]):
