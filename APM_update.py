@@ -118,7 +118,8 @@ def APM_init_update(feature_extractor, classifier_t,p,r,target_train_dl,epoch_id
          # try一下，不可以站在上帝视角来看待问题
         
         logit_t_energy = logit_t.detach().cpu().numpy()
-        list_logit = [np.exp(x)/T  for _,x in enumerate(logit_t_energy)]
+        logit_t_energy = logit_t_energy/T
+        list_logit = [np.exp(x)  for _,x in enumerate(logit_t_energy)]
         # -E(X)  值越大，表示其越是分布内的样本，否则表示其越是分布外的样本
         energy = [calculate_natigative_logit(x) for _,x in enumerate(list_logit)]
         energy = energy / np.log(after_softmax.size(1)) 
