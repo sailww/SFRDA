@@ -18,7 +18,7 @@
  > conda install -c conda-forge easydict\
  > pip insatll easydl
 # Download source-pretrained parameters (Fs and Cs of Figure 2 in our main paper)
-- Download source-pretrained parameters[[link]](https://pan.baidu.com/s/1r7YDhhdpXBanbpNEnIkxvA),password: wfff ;in: save_model_path:replace\
+- Download source-pretrained parameters[[link]](https://pan.baidu.com/s/18O7897Gjt4O46BM6FnUS_w),password: wfff ;in: save_model_path:replace\
 - ex) source-pretrained parameters of A[0] -> W[2] senario should be located in /pretrained_weights_office31/TrainSourceModelaccBEST_model_checkpoint02.pth.tar
 # Training
 - Run the following command
