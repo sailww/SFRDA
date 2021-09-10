@@ -6,7 +6,7 @@ import torch
 from scipy.spatial.distance import cosine
 
 #H2
-T = 10
+T = 1
 def calculate_entropyH2(max_entropy):
     if max_entropy >= 0.5:
         entropy_re = - max_entropy * np.log(max_entropy + 1e-10)+ (- 
@@ -41,7 +41,7 @@ def calculate_natigative_logit(list_val):
     total = 0
     for ele in range(0, len(list_val)):
         total = total + list_val[ele]
-    return  T * np.log(total)
+    return  T *10* np.log(total)
 def calculate_avg_entropy(h_dict,available_cls):
     sub_total_size = 0 
     sub_total_entropy = 0.0
@@ -119,7 +119,7 @@ def APM_init_update(feature_extractor, classifier_t,p,r,target_train_dl,epoch_id
         
         logit_t_energy = logit_t.detach().cpu().numpy()
         logit_t_energy = logit_t_energy/T
-        list_logit = [np.exp(x)  for _,x in enumerate(logit_t_energy)]
+        list_logit = [np.exp(x)/10  for _,x in enumerate(logit_t_energy)]
         # -E(X)  值越大，表示其越是分布内的样本，否则表示其越是分布外的样本
         energy = [calculate_natigative_logit(x) for _,x in enumerate(list_logit)]
         energy = energy / np.log(after_softmax.size(1)) 
