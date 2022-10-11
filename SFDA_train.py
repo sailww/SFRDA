@@ -217,7 +217,6 @@ while epoch_id < 300:
         ##
         val = torch.from_numpy(np.array(10))
         min_val = min_val.detach().cpu().numpy().tolist()
-        #这里并非是全部填充
         in_sec  = []
         for cls in range(len(min_val)):
             in_sec.append(min_val[cls])
@@ -273,7 +272,7 @@ while epoch_id < 300:
         
         for cls in range(args.data.dataloader.batch_size):
             #当前所属类的熵
-            if(first_avg_min[cls]*(1.2) <= second_avg_min[cls] or entropy_norm[cls] <= select_classes_entropy[pseudo_label[cls]] ):
+            if(first_avg_min[cls]*(1.2) <= second_avg_min[cls] or list_entropy[cls] <= select_classes_entropy[pseudo_label[cls]] ):
                 confidence_mask.append(1)
             else:
                 confidence_mask.append(0)
