@@ -103,7 +103,7 @@ def APM_init_update(feature_extractor, classifier_t,p,r,target_train_dl,epoch_id
         
        
         
-        #测试H1(p^2)或测试 H2
+      
         # 转成array
         after_softmax_array = after_softmax.detach().cpu().numpy()
         #每行的最大值，最值得相信的那个值
@@ -115,7 +115,7 @@ def APM_init_update(feature_extractor, classifier_t,p,r,target_train_dl,epoch_id
 
          ##logit_t用于计算一批图片的能量
          ##利用能量将分布内和分布外的样本进行筛选，将0.8*能量之外的能量作为ood样本看待，然后只取一个
-         # try一下，不可以站在上帝视角来看待问题
+ 
         
         logit_t_energy = logit_t.detach().cpu().numpy()
         logit_t_energy = logit_t_energy/T
@@ -207,22 +207,6 @@ def APM_init_update(feature_extractor, classifier_t,p,r,target_train_dl,epoch_id
         for cls1 in range(len_e):
             sub_energy += ents_np[ent_idxs[cls1]]
         select_class_energy[cls] = sub_energy/len_e 
-    # if(epoch_id %2 == 0):
-    #     #计算挑选的准确率
-    #     total_num = 0.0
-    #     total_accuracy = 0.0
-    #     for cls in available_cls:
-    #         len_e = class_protypeNum_dict[cls]
-    #         # ents_np = np.concatenate(h_dict_true_label[cls], axis=0)
-    #         total_num += len_e
-    #     acc_test = select_item / total_num
-    #     print("<<<<<<<<<<<<<select accuracy and detail information<<<<<<<<<<<<<")
-    #     print(epoch_id)
-    #     print(select_item)
-    #     print(total_num)
-    #     print(acc_test)
-    #     print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-
         
     for cls in range(args.data.dataset.n_share):
 
